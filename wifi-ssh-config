@@ -1,0 +1,15 @@
+#!bin/bash
+
+echo "
+country=CZ
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+ ssid="Vergil Inc."
+ scan_ssid=1
+ psk="wifightit"
+ key_mgmt=WPA-PSK
+} " >> /etc/wpa_supplicant/wpa_supplicant.conf
+sudo touch /boot/ssh.txt
+sudo reboot
