@@ -2,13 +2,12 @@
 sudo apt-get update
 sudo apt-get -y upgrade 
 sudo apt-get -y install git-core
-cd ~/
 git clone git://git.drogon.net/wiringPi
 cd ~/wiringPi
 ./build
 cd
 git clone git@github.com:Madeski/raspberry.git
-cd raspberry
+cd ~/raspberry
 gcc -o gpio_alt gpio_alt.c
 sudo chown root:root gpio_alt
 sudo chmod u+s gpio_alt
@@ -19,4 +18,6 @@ amixer cset numid=3 "1"                               #force 3.5mm Jack
 sudo chmod +x /root/pwmaudio.sh
 sudo systemctl enable pwmaudio.service 
 sudo systemctl start pwmaudio.service
+cd
+sudo apt-get -y install mpg123
 sudo reboot
