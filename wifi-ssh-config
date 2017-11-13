@@ -1,14 +1,17 @@
 #!/bin/bash
 cd /etc/wpa_supplicant
+sudo rm wpa_supplicant.conf
 sudo echo "country=CZ
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 network={
- ssid="Vergil Inc."
+ ssid=\"Vergil Inc.\"
  scan_ssid=1
- psk="wifightit"
+ psk=\"wifightit\"
  key_mgmt=WPA-PSK
 } " >> wpa_supplicant.conf
+sudo echo "wpa_config is ready!"
 cd /boot
 sudo touch ssh.txt
+sudo echo "ssh file was created!"
 sudo reboot
